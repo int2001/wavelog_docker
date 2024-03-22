@@ -17,7 +17,7 @@
 
 Branch is current master.
 
-### Use pre-built image
+### Use pre-built image (Currently NO UPDATING possible)
 1) Get Repo" `git clone https://github.com/int2001/wavelog_docker.git`
 2) Get into directory: `cd wavelog_docker`
 3) Get into directory "hub" for latest master: `cd hub` OR into "devhub" for latest dev: `cd devhub`
@@ -27,7 +27,6 @@ Branch is current master.
 7) Enjoy Wavelog
 
 If you want to use the docker-compose.yml for tou QNAP/Synology/proxmox/whatever Docker-Machine, simply copypaste it out of **hub** or **devhub**
-Updating is the same than at self-built
 
 ### Updating
 1) Stop Wavelog-Containers (wavelog-db and wavelog-main)
