@@ -6,7 +6,7 @@
 
 ## Howto:
 
-### Self-Building:
+### Self-Building (Recommended way!)
 #### Installing
 1) Get Repo" `git clone https://github.com/int2001/wavelog_docker.git`
 2) Get into directory: `cd wavelog_docker`
