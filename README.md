@@ -1,13 +1,13 @@
 # Dockerize Wavelog.
 
-## prerequisites:
+## Prerequisites:
 * Latest Docker on your NAS, [workstation](https://www.docker.com/products/docker-desktop/), whereever)
 * a few minutes ;)
 
 ## Howto:
 
 ### Installing
-1) Get Repo" `git clone https://github.com/int2001/wavelog_docker.git`
+1) Get Repo: `git clone https://github.com/int2001/wavelog_docker.git`
 2) Get into directory: `cd wavelog_docker`
 3) Launch buildprocess: `docker-compose up -d`
 4) Navigate your Browser to [[IP or DNS of your Docker-Host]]:8086
