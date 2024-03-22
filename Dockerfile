@@ -28,3 +28,4 @@ RUN echo "Setting permissions to the install folder" \
 && chmod -R g+rw ./images/eqsl_card_images/ \
 && chmod -R g+rw ./assets/ \
 && chmod -R 777 /var/www/html/install
+RUN git config --system --add safe.directory /var/www/html
