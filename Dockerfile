@@ -10,9 +10,10 @@ RUN apt-get update \
 RUN docker-php-ext-install mysqli mbstring xml zip
 
 WORKDIR /var/www/html
-RUN git clone https://github.com/wavelog/wavelog.git .
+RUN git config --system --add safe.directory /var/www/html
+RUN git clone https://github.com/int2001/wavelog.git .
 RUN chown -R root:www-data /var/www/html
-RUN git checkout master
+RUN git checkout dev
 RUN mkdir ./userdata
 RUN echo "Setting root as owner of the html folder" \
 && chown -R root:www-data /var/www/html
@@ -28,3 +29,4 @@ RUN echo "Setting permissions to the install folder" \
 && chmod -R g+rw ./images/eqsl_card_images/ \
 && chmod -R g+rw ./assets/ \
 && chmod -R 777 /var/www/html/install
+RUN git config --system --add safe.directory /var/www/html
