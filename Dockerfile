@@ -11,6 +11,8 @@ RUN docker-php-ext-install mysqli mbstring xml zip
 
 WORKDIR /var/www/html
 RUN git clone https://github.com/wavelog/wavelog.git .
+RUN chown -R root:www-data /var/www/html
+RUN git checkout master
 RUN mkdir ./userdata
 RUN echo "Setting root as owner of the html folder" \
 && chown -R root:www-data /var/www/html
