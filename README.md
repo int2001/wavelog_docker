@@ -1,7 +1,7 @@
 # Dockerize Wavelog.
 
 ## prerequisites:
-* Latest Docker (on your NAS, workstation, whereever)
+* Latest Docker on your NAS, [workstation](https://www.docker.com/products/docker-desktop/), whereever)
 * a few minutes ;)
 
 ## Howto:
