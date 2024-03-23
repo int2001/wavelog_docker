@@ -20,7 +20,7 @@ services:
       - wavelog-db
     volumes:
       - wavelog-config:/var/www/html/application/config
-      - wavelog-uploads:/var/www/html/application/uploads
+      - wavelog-uploads:/var/www/html/uploads
       - wavelog-userdata:/var/www/html/userdata
     ports:
       - "8086:80"
