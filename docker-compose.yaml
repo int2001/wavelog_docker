@@ -20,7 +20,6 @@ services:
       - wavelog-db
     volumes:
       - wavelog-config:/var/www/html/application/config
-      - wavelog-backup:/var/www/html/application/backup
       - wavelog-uploads:/var/www/html/application/uploads
       - wavelog-userdata:/var/www/html/userdata
     ports:
@@ -29,7 +28,6 @@ services:
 
 volumes:
   wavelog-dbdata:
-  wavelog-backup:
   wavelog-uploads:
   wavelog-userdata:
   wavelog-config:
