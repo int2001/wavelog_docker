@@ -8,6 +8,7 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini \
 RUN apt-get update \
 && apt-get install -y git curl libxml2-dev libonig-dev libzip-dev git
 RUN docker-php-ext-install mysqli mbstring xml zip
+RUN a2enmod rewrite
 
 WORKDIR /var/www/html
 RUN git config --system --add safe.directory /var/www/html
@@ -16,6 +17,7 @@ RUN chown -R www-data:www-data /var/www/html
 RUN git checkout dev
 RUN git pull
 RUN mkdir ./userdata
+RUN mv ./.htaccess.sample ./.htaccess
 RUN echo "Setting root as owner of the html folder" \
 && chown -R www-data:www-data /var/www/html
 RUN echo "Setting permissions to the install folder" \
