@@ -16,7 +16,8 @@ RUN chown -R www-data:www-data /var/www/html
 RUN git checkout master
 RUN git pull
 RUN mkdir ./userdata
-RUN echo "Setting root as owner of the html folder" \
+RUN mv ./.htaccess.sample ./.htaccess
+RUN echo "Setting www-data as owner of the html folder" \
 && chown -R www-data:www-data /var/www/html
 RUN echo "Setting permissions to the install folder" \
 && cd /var/www/html \
