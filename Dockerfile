@@ -14,7 +14,7 @@ WORKDIR /var/www/html
 RUN git config --system --add safe.directory /var/www/html
 RUN git clone https://github.com/wavelog/wavelog.git .
 RUN chown -R www-data:www-data /var/www/html
-RUN git checkout master
+RUN git checkout dev
 RUN git pull
 RUN mkdir ./userdata
 RUN mv ./.htaccess.sample ./.htaccess
