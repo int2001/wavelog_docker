@@ -32,3 +32,58 @@ Call `docker-compose start wavelog_docker`
 
 ## Adjustments
 * You can move from master to dev at any time simply by editing the `Dockerfile` and changing the Branch at L17 there
+
+## Default cronjobs
+Big tnx to @jk13xyz for the idea.
+
+The following cronjobs are set by default through the Dockerfile They don't need to be manually enabled. They can be updated, but this is a hassle. I use these settings because they made the most sense to me. The spacing is done to ensure the scripts don't run concurrently and cause time-outs.
+
+The set cronjobs and runtimes are:
+
+### ClubLog upload
+
+Every day at 00:00 and 12:00
+
+### QRZ upload
+
+Every day at 00:10 and 12:10
+
+### QRZ download
+
+Every day at 00:20 and 12:20
+
+### eQSL sync
+
+Every day at 00:30 and 12:30
+
+### HRDLog upload
+
+Every day at 00:40 and 12:40
+
+### LotW upload
+
+Every day at 01:00
+
+### LotW user database update
+
+Every day at 01:10
+
+### ClubLog Super Check Partial
+
+Every Monday at 01:20
+
+### Summits on the Air (SOTA) database update
+
+On the 1st of every month at 02:00
+
+### World Wide Flora & Fauna (WWFF) databse update
+
+On the 1st of every month at 02:10
+
+### Parks on the Air (POTA) database update
+
+On the 1st of every month at 02:20
+
+### DOK database update
+
+On the 1st of every month at 03:00
