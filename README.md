@@ -31,4 +31,4 @@ Simply call `docker-compose down wavelog_docker`
 Call `docker-compose start wavelog_docker`
 
 ## Adjustments
-* You can move from master to dev at any time simply by editing the `Dockerfile` and changing the Branch at L15 there
+* You can move from master to dev at any time simply by editing the `Dockerfile` and changing the Branch at L17 there
