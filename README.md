@@ -22,6 +22,8 @@ If you want to use the docker-compose.yml for tou QNAP/Synology/proxmox/whatever
 ### Updating
 Go to Admin -> Debug Information and press "Update"-Button
 
+**Important**: Currently updating of ONLY the image (the docker-way) is not supported. I'm working on it
+
 ## Stopping
 Simply call `docker-compose down wavelog_docker`
 
