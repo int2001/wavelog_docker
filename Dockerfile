@@ -6,8 +6,8 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini \
 && echo "post_max_size = 64M" >> /usr/local/etc/php/conf.d/uploads.ini \
 && echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/uploads.ini
 RUN apt-get update \
-&& apt-get install -y git curl libxml2-dev libonig-dev libzip-dev git cron
-RUN docker-php-ext-install mysqli mbstring xml zip
+&& apt-get install -y git curl libxml2-dev libonig-dev libzip-dev git cron \
+&&  docker-php-ext-install mysqli mbstring xml zip
 RUN a2enmod rewrite
 
 WORKDIR /var/www/html
