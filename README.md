@@ -6,8 +6,7 @@
 
 ## Howto:
 
-### Self-Building 
-#### Installing
+### Installing
 
 ### Use pre-built image (UPDATING is currently ONLY possible via "In-App-Updater" - at Admin -> Debug)
 1. Get Repo" `git clone https://github.com/int2001/wavelog_docker.git`
