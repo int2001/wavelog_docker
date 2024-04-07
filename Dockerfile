@@ -7,14 +7,14 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini \
 && echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/uploads.ini
 RUN apt-get update \
 && apt-get install -y git curl libxml2-dev libonig-dev libzip-dev git cron \
-&&  docker-php-ext-install mysqli mbstring xml zip
+&& docker-php-ext-install mysqli mbstring xml zip
 RUN a2enmod rewrite
 
 WORKDIR /var/www/html
 RUN git config --system --add safe.directory /var/www/html
 RUN git clone https://github.com/wavelog/wavelog.git .
 RUN chown -R www-data:www-data /var/www/html
-RUN git checkout dev
+RUN git checkout master
 RUN git pull
 RUN mkdir ./userdata
 RUN mv ./.htaccess.sample ./.htaccess
