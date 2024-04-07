@@ -9,15 +9,16 @@
 ### Self-Building 
 #### Installing
 
-### Use pre-built image (UPDATING is currently ONLY at dev-branch possible)
+### Use pre-built image (UPDATING is currently ONLY possible via "In-App-Updater" - at Admin -> Debug)
 1) Get Repo" `git clone https://github.com/int2001/wavelog_docker.git`
-2) Get into directory: `cd wavelog_docker/devhub`
+2a) Get into directory: `cd wavelog_docker/devhub` for latest dev "edge"
+2b) Get into directory: `cd wavelog_docker/prodhub` for latest Master-Release "latest"
 4) Launch buildprocess: `docker-compose up -d`
 5) Navigate your Browser to [[IP or DNS of your Docker-Host]]:8086
 6) Follow the installer. **important**: DB-Hostname is "wavelog-db". Username, Password, Database is all "wavelog". If you want to change that, pse edit the docker-compose.yaml
 7) Enjoy Wavelog
 
-If you want to use the docker-compose.yml for tou QNAP/Synology/proxmox/whatever Docker-Machine, simply copypaste it out of **devhub**
+If you want to use the docker-compose.yml for tou QNAP/Synology/proxmox/whatever Docker-Machine, simply copypaste it out of **devhub** or **prodhub**
 
 ### Updating
 Go to Admin -> Debug Information and press "Update"-Button
