@@ -8,13 +8,23 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini \
 && echo "post_max_size = 64M" >> /usr/local/etc/php/conf.d/uploads.ini \
 && echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/uploads.ini
 
-RUN apt-get update \
-&& apt-get install -y curl libxml2-dev libonig-dev libzip-dev cron \
-&& docker-php-ext-install mysqli mbstring xml zip
-RUN a2enmod rewrite
+# Install dependencies
+RUN set -ex; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        libzip-dev \
+        cron \
+    ; \
+    docker-php-ext-install -j "$(nproc)" \
+        mysqli \
+        zip \
+    ; \
+    a2enmod rewrite
 
 WORKDIR /var/www/html
+
 RUN curl -L https://api.github.com/repos/wavelog/wavelog/tarball/master | tar -xz --strip=1
+
 RUN chown -R www-data:www-data /var/www/html
 
 RUN mkdir ./userdata
