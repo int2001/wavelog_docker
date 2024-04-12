@@ -15,7 +15,7 @@ services:
   wavelog-main:
     container_name: wavelog-main
     build:
-      context: .
+      context: wavelog
       dockerfile: ./Dockerfile
     environment:
       CI_ENV: docker
