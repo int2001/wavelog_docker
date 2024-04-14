@@ -12,11 +12,13 @@ RUN a2enmod rewrite
 
 WORKDIR /var/www/html
 RUN git config --system --add safe.directory /var/www/html
-RUN git clone https://github.com/wavelog/wavelog.git .
+RUN git clone https://github.com/int2001/wavelog.git .
 RUN chown -R www-data:www-data /var/www/html
-RUN git checkout master
-RUN git pull
+
+RUN git checkout docker_readiness && \
+git pull
 RUN mkdir ./userdata
+RUN mkdir ./application/config/docker
 RUN mv ./.htaccess.sample ./.htaccess
 RUN echo "Setting www-data as owner of the html folder" \
 && chown -R www-data:www-data /var/www/html
@@ -31,6 +33,7 @@ RUN echo "Setting permissions to the install folder" \
 && chmod -R g+rw ./userdata/ \
 && chmod -R g+rw ./images/eqsl_card_images/ \
 && chmod -R g+rw ./assets/ \
+&& chmod -R g+rw ./application/config/docker/ \
 && chmod -R 777 /var/www/html/install
 RUN git config --system --add safe.directory /var/www/html
 RUN echo "Installing cronjobs" \

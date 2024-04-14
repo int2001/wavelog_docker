@@ -16,10 +16,12 @@ services:
     container_name: wavelog-main
     build:
       dockerfile: ./Dockerfile
+    environment:
+      CI_ENV: docker
     depends_on:
       - wavelog-db
     volumes:
-      - wavelog-config:/var/www/html/application/config
+      - wavelog-config:/var/www/html/application/config/docker
       - wavelog-uploads:/var/www/html/uploads
       - wavelog-userdata:/var/www/html/userdata
     ports:
