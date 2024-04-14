@@ -13,12 +13,14 @@ services:
     restart: unless-stopped
 
   wavelog-main:
-    image: dj7nt/wavelog:latest
     container_name: wavelog-main
+    image: dj7nt/wavelog:latest
     depends_on:
       - wavelog-db
+    environment:
+      CI_ENV: docker
     volumes:
-      - wavelog-config:/var/www/html/application/config
+      - wavelog-config:/var/www/html/application/config/docker
       - wavelog-uploads:/var/www/html/uploads
       - wavelog-userdata:/var/www/html/userdata
     ports:
