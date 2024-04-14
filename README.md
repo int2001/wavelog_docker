@@ -13,7 +13,7 @@
    
 2. Go to directory with yaml-file
  
-   a. Get into directory: `cd wavelog_docker/devhub` for latest dev "edge"
+   a. Get into directory: `cd wavelog_docker/devhub` for latest dev "dev"
    
    b. Get into directory: `cd wavelog_docker/prodhub` for latest Master-Release "latest"
 3. Launch buildprocess: `docker-compose up -d`
@@ -24,9 +24,7 @@
 If you want to use the docker-compose.yml for tou QNAP/Synology/proxmox/whatever Docker-Machine, simply copypaste it out of **devhub** or **prodhub**
 
 ### Updating
-Go to Admin -> Debug Information and press "Update"-Button
-
-**Important**: Currently updating of ONLY the image (the docker-way) is not supported. I'm working on it
+Simply `docker pull` the latest image from hub
 
 ## Stopping
 Simply call `docker-compose down wavelog_docker`
