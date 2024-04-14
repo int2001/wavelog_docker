@@ -32,7 +32,6 @@ RUN echo "Setting permissions to the install folder" \
 && chmod -R g+rw ./assets/ \
 && chmod -R g+rw ./application/config/docker/ \
 && chmod -R 777 /var/www/html/install
-RUN git config --system --add safe.directory /var/www/html
 RUN echo "Installing cronjobs" \
 RUN touch /etc/crontab && \
     echo "0 */12 * * * curl --silent http://localhost/clublog/upload &>/dev/null" >> /etc/crontab && \
