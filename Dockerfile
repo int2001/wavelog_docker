@@ -6,17 +6,14 @@ RUN touch /usr/local/etc/php/conf.d/uploads.ini \
 && echo "post_max_size = 64M" >> /usr/local/etc/php/conf.d/uploads.ini \
 && echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/uploads.ini
 RUN apt-get update \
-&& apt-get install -y git curl libxml2-dev libonig-dev libzip-dev git cron \
+&& apt-get install -y tar curl libxml2-dev libonig-dev libzip-dev git cron \
 && docker-php-ext-install mysqli mbstring xml zip
 RUN a2enmod rewrite
 
 WORKDIR /var/www/html
-RUN git config --system --add safe.directory /var/www/html
-RUN git clone https://github.com/int2001/wavelog.git .
+RUN curl -L https://api.github.com/repos/wavelog/wavelog/tarball/dev | tar -xz --strip=1
 RUN chown -R www-data:www-data /var/www/html
 
-RUN git checkout docker_readiness && \
-git pull
 RUN mkdir ./userdata
 RUN mkdir ./application/config/docker
 RUN mv ./.htaccess.sample ./.htaccess
