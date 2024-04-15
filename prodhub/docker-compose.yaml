@@ -14,7 +14,7 @@ services:
 
   wavelog-main:
     container_name: wavelog-main
-    image: dj7nt/wavelog:latest
+    image: ghcr.io/wavelog/wavelog:latest
     depends_on:
       - wavelog-db
     environment:
