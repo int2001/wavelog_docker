@@ -1,0 +1,12 @@
+# Project specific config file for MariaDB server.
+# Place all setting overriding the default values in here.
+# This file is linked to the container as a volume
+
+
+# InnoDB creates tables in file-per-table tablespaces by default. This behavior
+# is controlled by the innodb_file_per_table variable.
+# Disabling innodb_file_per_table causes InnoDB to create tables in the system
+# tablespace.
+[mysqld]
+innodb_file_per_table=ON
+
