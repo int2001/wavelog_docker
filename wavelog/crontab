@@ -1,0 +1,37 @@
+# Upload QSOs to Club Log (ignore cron job if this integration is not required)
+3 */6 * * * curl --silent https://localhost/index.php/clublog/upload
+
+# Upload QSOs to LoTW if certs have been provided every hour.
+0 */1 * * * curl --silent https://localhost/index.php/lotw/lotw_upload
+
+# Upload QSOs to QRZ Logbook (ignore cron job if this integration is not required)
+6 */6 * * * curl --silent https://localhost/index.php/qrz/upload
+# Download QSOs from QRZ Logbook (ignore cron job if this integration is not required)
+18 */6 * * * curl --silent https://localhost/index.php/qrz/download
+
+
+# Upload QSOs to HRD Logbook (ignore cron job if this integration is not required)
+12 */6 * * * curl --silent https://localhost/index.php/hrdlog/upload
+
+# Upload/download QSOs to/from Eqsl (ignore cron job if this integration is not required)
+9 */6 * * * curl --silent https://localhost/index.php/eqsl/sync
+
+# Update LOTW Users Activity
+# Update only once a week as data is only provided weekly at ~ 1000z Sundays
+10 1 * * 1 curl --silent https://localhost/index.php/update/lotw_users
+
+# Update Clublog SCP Database File
+@weekly curl --silent https://localhost/index.php/update/update_clublog_scp
+
+# Update DOK File for autocomplete
+@monthly curl --silent https://localhost/index.php/update/update_dok
+
+# Update SOTA File for autocomplete
+@monthly curl --silent https://localhost/index.php/update/update_sota
+
+# Update WWFF File for autocomplete
+@monthly curl --silent https://localhost/index.php/update/update_wwff
+
+# Update POTA File for autocomplete
+@monthly curl --silent https://localhost/index.php/update/update_pota
+

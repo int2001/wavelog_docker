@@ -1,1 +1,6 @@
-.git/
+# database contents
+*.sql
+*.sql.gz
+*.sql.xz
+*.sql.zst
+

@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   wavelog-db:
     image: mariadb:11.3
@@ -10,11 +11,14 @@ services:
       MARIADB_PASSWORD: wavelog # <- Insert a strong password here
     volumes:
       - wavelog-dbdata:/var/lib/mysql
+      - ./wavelog-db/init:/docker-entrypoint-initdb.d:ro
+      - ./wavelog-db/mariadb.cnf:/etc/mysql/conf.d/mariadb.cnf:ro
     restart: unless-stopped
 
   wavelog-main:
     container_name: wavelog-main
     build:
+      context: wavelog
       dockerfile: ./Dockerfile
     environment:
       CI_ENV: docker
@@ -33,3 +37,4 @@ volumes:
   wavelog-uploads:
   wavelog-userdata:
   wavelog-config:
+
