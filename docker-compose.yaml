@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   wavelog-db:
     image: mariadb:11.3
@@ -36,3 +37,4 @@ volumes:
   wavelog-uploads:
   wavelog-userdata:
   wavelog-config:
+
